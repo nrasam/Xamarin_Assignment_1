@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Assignment_1.HistoryItems">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="historyList" ItemSelected="list_ItemSelected"  Margin="0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding name}"></Label>
+                                <Label Text="{Binding quantity}"></Label>
+                                <Label Text="{Binding price, StringFormat='$ {0:F2}'}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

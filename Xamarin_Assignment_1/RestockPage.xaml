@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Assignment_1.RestockPage">
+    <ContentPage.Content>
+        <StackLayout Padding="0" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Text="Restock Page"
+                HorizontalOptions="CenterAndExpand" />
+            <Entry x:Name="quantityEntry"  Placeholder="Enter new quantity" Margin="20, 10" Keyboard="Numeric"></Entry>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button x:Name="restockBtn" Text="Restock" Clicked="Restock_Clicked"></Button>
+                <Button Text="Cancel" Clicked="Cancel_Clicked"></Button>
+            </StackLayout>
+            <ListView x:Name="stockList" ItemSelected="stockList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding type}"></Label>
+                                <Label Text="{Binding quantity}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

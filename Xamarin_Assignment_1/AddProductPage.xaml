@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Xamarin_Assignment_1.AddProductPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Add new product page"
+                HorizontalOptions="CenterAndExpand" />
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Label Text="NEW PRODUCT" Grid.Column="0" Grid.Row="0" Margin="10"></Label>
+                <Label Text="Product Name" VerticalOptions="Center" Grid.Column="0" Grid.Row="1" Margin="10" FontSize="Medium"></Label>
+                <Entry x:Name="nameEntry" Placeholder="Enter Product Name" Grid.Column="1" Grid.Row="1"></Entry>
+                <Label Text="Price" VerticalOptions="Center" Grid.Column="0" Grid.Row="2" Margin="10" FontSize="Medium"></Label>
+                <Entry x:Name="priceEntry" Placeholder="Enter Product Price" Keyboard="Numeric" Grid.Column="1" Grid.Row="2"></Entry>
+                <Label Text="Quantity" VerticalOptions="Center" Grid.Column="0" Grid.Row="3" Margin="10" FontSize="Medium"></Label>
+                <Entry x:Name="quantityEntry" Placeholder="Enter Product Quantity" Keyboard="Numeric" Grid.Column="1" Grid.Row="3"></Entry>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="MenuItem1" Order="Primary" Text="Save" Priority="0" Clicked="Save_Clicked" />
+        <ToolbarItem Name="MenuItem2" Order="Primary" Text="Cancel" Priority="1" Clicked="Cancel_Clicked"/>
+    </ContentPage.ToolbarItems>
+</ContentPage>
