@@ -39,14 +39,15 @@ namespace Xamarin_Assignment_1
         private void Buy_Clicked(object sender, EventArgs e)
         {
             Product product = list.SelectedItem as Product;
-            if (Convert.ToInt32(lblQuantity.Text) <= product.quantity)
+            int qty = Convert.ToInt32(lblQuantity.Text);
+            if (qty <= product.quantity && qty > 0)
             {
-                product.quantity -= Convert.ToInt32(lblQuantity.Text);
+                product.quantity -= qty;
                 list.ItemsSource = null;
                 list.ItemsSource = products;
 
                 string name = product.type;
-                int quantity = Convert.ToInt32(lblQuantity.Text);
+                int quantity = qty;
                 double totalPrice = quantity * product.price;
                 DateTime purchaseTime = DateTime.Now;
 
@@ -58,7 +59,7 @@ namespace Xamarin_Assignment_1
                 }
             }
             else {
-                DisplayAlert("Error", "Quantity surpasses stock.", "Try again");
+                DisplayAlert("Error", "Invalid Quantity.", "Try again");
             }
 
             lblQuantity.Text = "0";
